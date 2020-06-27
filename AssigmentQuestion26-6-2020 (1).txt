@@ -1,0 +1,70 @@
+                                    Assignment Questions-26-6-2020
+
+
+1.Given an input string, count occurrences of all characters within a string.
+Ans:str = input("Enter a string :")
+char = input("Enter a char :")
+count=0
+for i in range(len(str)):
+    if(str[i] == char):
+        count+=1
+print("The total number of times ",char," has occured = ",count)
+
+2.Given a string, return the sum and average of the digits that appear in the string, ignoring all other characters.
+ans:def findSum(str1): 
+    temp = "" 
+    Sum = 0
+    for ch in str1: 
+        if (ch.isdigit()):
+            temp += ch 
+        else: 
+            Sum += int(temp) 
+            temp = "0"
+    return Sum + int(temp)
+
+str1=input("Enter a string :")
+print(findSum(str1))
+
+3.Given a string input Count all lower case, upper case, digits, and special symbols.
+ans:def count(s):
+    upper,lower,digits,special=0,0,0,0
+    for i in range(len(s)):
+        if s[i].isupper():
+            upper+=1
+        elif s[i].islower():
+            lower+=1
+        elif s[i].isdigit():
+            digits+=1
+        else:
+            special+=1
+    print("Uppercase letter :",upper)
+    print("Lowercase letter :",lower)
+    print("Digits :",digits)
+    print("Special characters :",special)
+s=input("Enter a string :")
+count(s)
+
+4.Arrange String characters such that lowercase letters should come first.
+ans:m=input("Enter a string : ")
+print("Original String :",m)
+words=m.split()
+lower=[]
+upper=[]
+for char in m:
+    if char.islower():
+        lower.append(char)
+    else:
+        upper.append(char)
+sortedStr=''.join(lower+upper)
+print("After arranging :",sortedStr)
+
+5.Given 2 strings, s1 and s2, create a new string by appending s2 in the middle of s1.
+ans:def appendMiddle(s1,s2):
+    middleIndex=int(len(s1)/2)
+    print("Original Strings are :",s1,s2)
+    middleThree=s1[:middleIndex-1]+s2+s1[middleIndex-1:]
+    print("After appending :",middleThree)
+
+s1=input(">")
+s2=input(">")
+appendMiddle(s1,s2)
