@@ -1,0 +1,35 @@
+1. area of a circle using math function
+ans:import math
+    r = float(input("enter the radius of circle"))
+Area=math.pi*r*r
+print("Area of circle is :",Area)
+
+2.Area of Regular Polygon using math function
+ans:n = int(input("Number of sides : "))
+s = float(input("Length of a side : "))
+p_area = n*(s**2)/(4*math.tan(math.pi/n))
+print("The area of a regular polygon : ",p_area)
+
+3. Area of a Segment of a Circle using math function
+ans:
+def area_of_segment(radius,angle):
+    area_of_sector = math.pi * (radius * radius) * (angle / 360)
+    area_of_triangle = 0.5 *(radius * radius) *math.sin((angle * math.pi) / 180) 
+    return area_of_sector-area_of_triangle
+
+radius = float(input("Radius of circle : "))
+angle = float(input("Angle enclosed by the segment : "))
+print("Area of minor segment :",area_of_segment(radius,angle))
+print("Area of major segment :",area_of_segment(radius,360-angle))
+
+4.shuffle list
+ans:import random
+x = [100,1,2,3,30,40,'hi','hello']
+random.shuffle(x)
+print(x)
+
+5.#generate random numbers between 1,10000
+ans:
+x=list(range(1,10000,50))
+print(x)
+
